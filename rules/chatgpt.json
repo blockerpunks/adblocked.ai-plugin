@@ -1,0 +1,8 @@
+{
+  "platform": "chatgpt",
+  "version": 1,
+  "selectors": [
+    "[data-ad]",
+    "[data-sponsored]"
+  ]
+}

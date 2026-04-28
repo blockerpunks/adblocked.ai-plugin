@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>adblocked.ai — Settings</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="options">
+      <header>
+        <h1>adblocked.ai</h1>
+        <p class="tagline">Settings</p>
+      </header>
+
+      <section>
+        <h2>Whitelist</h2>
+        <p class="muted">Sites listed here will not have rules applied.</p>
+        <form id="whitelist-form">
+          <input
+            id="whitelist-input"
+            type="text"
+            placeholder="example.com"
+            autocomplete="off"
+          />
+          <button type="submit">Add</button>
+        </form>
+        <ul id="whitelist-list"></ul>
+      </section>
+
+      <section>
+        <h2>Counter</h2>
+        <p>Total ads blocked: <span id="counter-total">0</span></p>
+        <button id="reset-counter" type="button">Reset counter</button>
+      </section>
+
+      <section>
+        <h2>About</h2>
+        <p class="muted">
+          Build: <code id="build-info">dev</code><br />
+          adblocked.ai is open source. No data ever leaves your browser.
+        </p>
+      </section>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

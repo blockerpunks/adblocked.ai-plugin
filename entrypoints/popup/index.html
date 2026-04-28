@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>adblocked.ai</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <header>
+        <h1>adblocked.ai</h1>
+      </header>
+
+      <section class="toggle-row">
+        <label class="toggle">
+          <input id="enabled-toggle" type="checkbox" />
+          <span>Blocking enabled</span>
+        </label>
+      </section>
+
+      <section class="counters">
+        <div class="counter">
+          <span id="counter-host" class="number">0</span>
+          <span class="label" id="counter-host-label">on this site</span>
+        </div>
+        <div class="counter">
+          <span id="counter-total" class="number">0</span>
+          <span class="label">total ads blocked</span>
+        </div>
+      </section>
+
+      <footer>
+        <a id="open-options" href="#">Settings</a>
+      </footer>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
