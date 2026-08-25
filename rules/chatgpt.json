@@ -1,8 +1,5 @@
 {
   "platform": "chatgpt",
   "version": 1,
-  "selectors": [
-    "[data-ad]",
-    "[data-sponsored]"
-  ]
+  "selectors": ["div:has(> div > div > [role='link'])"]
 }
