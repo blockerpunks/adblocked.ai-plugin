@@ -1,5 +1,8 @@
 {
   "platform": "chatgpt",
   "version": 1,
-  "selectors": ["div:has(> div > div > div > div > [role='link'])"]
+  "selectors": [
+    "div:has(> div > div > div > div > [role='link'])",
+    "section:has(> aside > [role='list'])"
+  ]
 }
