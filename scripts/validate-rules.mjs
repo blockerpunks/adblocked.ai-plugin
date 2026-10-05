@@ -21,6 +21,10 @@ for (const file of files) {
     err(`invalid JSON: ${e.message}`);
     continue;
   }
+  if (rules === null || typeof rules !== 'object' || Array.isArray(rules)) {
+    err('top-level value must be an object');
+    continue;
+  }
 
   const stem = basename(file, '.json');
   if (typeof rules.platform !== 'string' || rules.platform !== stem) {
