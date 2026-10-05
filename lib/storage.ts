@@ -25,7 +25,9 @@ export async function setSettings(patch: Partial<Settings>): Promise<Settings> {
   return next;
 }
 
-export function onSettingsChange(handler: (settings: Settings) => void): () => void {
+export function onSettingsChange(
+  handler: (settings: Settings) => void,
+): () => void {
   const listener = (
     changes: Record<string, { newValue?: unknown; oldValue?: unknown }>,
     area: string,

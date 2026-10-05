@@ -46,7 +46,8 @@ async function renderWhitelist(): Promise<void> {
 
 async function renderCounter(): Promise<void> {
   const counters = await getCounters();
-  $<HTMLSpanElement>('counter-total').textContent = counters.total.toLocaleString();
+  $<HTMLSpanElement>('counter-total').textContent =
+    counters.total.toLocaleString();
 }
 
 function renderBuildInfo(): void {

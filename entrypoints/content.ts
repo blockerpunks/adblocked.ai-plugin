@@ -1,7 +1,11 @@
 import { defineContentScript } from 'wxt/utils/define-content-script';
 import { browser } from 'wxt/browser';
 import { loadRulesForHost } from '../lib/rules';
-import { injectStylesheet, removeStylesheet, startObserver } from '../lib/blocker';
+import {
+  injectStylesheet,
+  removeStylesheet,
+  startObserver,
+} from '../lib/blocker';
 import { getSettings, onSettingsChange } from '../lib/storage';
 import type { BlockEvent } from '../lib/messages';
 

@@ -10,7 +10,10 @@ const $ = <T extends HTMLElement>(id: string): T => {
 
 async function getActiveHostname(): Promise<string | null> {
   try {
-    const [tab] = await browser.tabs.query({ active: true, currentWindow: true });
+    const [tab] = await browser.tabs.query({
+      active: true,
+      currentWindow: true,
+    });
     if (!tab?.url) return null;
     return new URL(tab.url).hostname;
   } catch {
@@ -26,7 +29,8 @@ async function render(): Promise<void> {
   ]);
 
   $<HTMLInputElement>('enabled-toggle').checked = settings.enabled;
-  $<HTMLSpanElement>('counter-total').textContent = counters.total.toLocaleString();
+  $<HTMLSpanElement>('counter-total').textContent =
+    counters.total.toLocaleString();
 
   const hostLabel = $<HTMLSpanElement>('counter-host-label');
   const hostNumber = $<HTMLSpanElement>('counter-host');
