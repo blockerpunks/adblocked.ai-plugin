@@ -8,7 +8,7 @@ export default defineConfig({
     name: 'adblocked.ai',
     description: 'Block ads in AI chat interfaces.',
     version: '0.0.1',
-    permissions: ['storage', 'alarms', 'declarativeNetRequest'],
+    permissions: ['storage'],
     host_permissions: ['*://chatgpt.com/*', '*://*.chatgpt.com/*'],
   },
   vite: () => ({
