@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.0](https://github.com/alchemydc/aegis/compare/v0.1.0...v0.2.0) (2026-10-25)
+
+
+### Features
+
+* **plugin:** add Firefox build with AMO unlisted signing ([4113810](https://github.com/alchemydc/aegis/commit/4113810b7fa0ed0eca7385bd5ea81113cc770543))
+* **plugin:** add Firefox build with AMO unlisted signing ([2d0aab5](https://github.com/alchemydc/aegis/commit/2d0aab50ed9c671611758b8f71e90b938b4c5c4f))
+
 ## [0.1.0](https://github.com/alchemydc/aegis/compare/v0.0.1...v0.1.0) (2026-10-05)
 
 
