@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/blockerpunks/adblocked.ai-plugin/compare/v0.2.0...v0.2.1) (2026-11-11)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump the npm-minor-patch group with 7 updates ([#2](https://github.com/blockerpunks/adblocked.ai-plugin/issues/2)) ([1d18d2f](https://github.com/blockerpunks/adblocked.ai-plugin/commit/1d18d2f21fcc332e0426bae7e212cbd4f37d0eb6))
+
 ## [0.2.0](https://github.com/alchemydc/aegis/compare/v0.1.0...v0.2.0) (2026-10-25)
 
 
