@@ -20,7 +20,7 @@ Node 22+, npm 10+.
 - `npm run validate:rules` — checks `rules/*.json` shape and selector syntax
 - `npm run build` — output in `.output/chrome-mv3/` (load unpacked via chrome://extensions)
 - `npm run zip` — packaged build
-- Firefox: `npm run dev:firefox` / `build:firefox` / `zip:firefox` (output in `.output/firefox-mv3/`; load via about:debugging → This Firefox → Load Temporary Add-on → `manifest.json`). Release builds are signed on AMO's unlisted channel in `release.yml` via a pinned `npx web-ext` (still not a dependency).
+- Firefox: `npm run dev:firefox` / `build:firefox` / `zip:firefox` (output in `.output/firefox-mv3/`; load via about:debugging → This Firefox → Load Temporary Add-on → `manifest.json`). Release builds are submitted to AMO's listed channel (public on addons.mozilla.org) in `release.yml` via a pinned `npx web-ext` (still not a dependency).
 - `COMMIT_SHA` env var is injected at build time as the `__COMMIT_SHA__` global (defaults to `dev`).
 
 There is no test suite.
@@ -29,8 +29,8 @@ There is no test suite.
 
 The extension is versioned with semver.
 
-- release-please (`.github/workflows/release.yml`, `release-please-config.json`) derives the next version from conventional commits (`fix:` → patch, `feat:` → minor; breaking → minor while < 1.0) and keeps a release PR open. Merging it tags `vX.Y.Z`, creates the GitHub Release, and attaches the built Chrome zip and signed Firefox XPI.
-- Signing needs the `AMO_JWT_ISSUER` and `AMO_JWT_SECRET` repo secrets.
+- release-please (`.github/workflows/release.yml`, `release-please-config.json`) derives the next version from conventional commits (`fix:` → patch, `feat:` → minor; breaking → minor while < 1.0) and keeps a release PR open. Merging it tags `vX.Y.Z`, creates the GitHub Release, and attaches the built Chrome zip and the AMO-signed Firefox XPI. The XPI is skipped (with a warning) if AMO holds the version for manual review past the 15-minute wait.
+- Signing needs the `AMO_JWT_ISSUER` and `AMO_JWT_SECRET` repo secrets, issued to an author of the AMO add-on `extension@adblocked.ai`.
 - Never edit versions by hand. `package.json` is the single source of truth; do not set `version` in `wxt.config.ts` (WXT reads it from `package.json`).
 - No pre-release suffixes (`-beta.1`): Chrome manifest versions must be dot-separated integers.
 
