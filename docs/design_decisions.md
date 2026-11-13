@@ -97,7 +97,7 @@ The single function `reportBlocked(platform, hostname, selectorId)` in `lib/coun
 
 **Decision.** Every release ships Chrome and Firefox. Brave and Edge are Chromium and run the Chrome build (Edge needs only its own store listing when store submission happens).
 
-**Firefox.** Built as MV3 (`wxt -b firefox --mv3`; WXT converts the service worker to a background script). Distributed like Chrome, as a sideloadable file on GitHub Releases: an XPI signed by AMO on the **unlisted** channel, since Firefox release builds refuse unsigned extensions. Gecko ID `extension@adblocked.ai`; `data_collection_permissions: none` (requires Firefox 140 desktop / 142 Android). Chosen ahead of Safari for its larger desktop share and low porting cost.
+**Firefox.** Built as MV3 (`wxt -b firefox --mv3`; WXT converts the service worker to a background script). Distributed as a public listing on addons.mozilla.org (AMO **listed** channel), which also handles updates. The AMO-signed XPI is attached to GitHub Releases too when approval finishes within the release job. Gecko ID `extension@adblocked.ai`; `data_collection_permissions: none` (requires Firefox 140 desktop / 142 Android). Chosen ahead of Safari for its larger desktop share and low porting cost.
 
 **Roadmap.**
 
