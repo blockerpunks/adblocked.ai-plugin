@@ -59,16 +59,25 @@ jobs:
         env:
           COMMIT_SHA: ${{ github.sha }}
 
-      # Unlisted channel: AMO signs the XPI without publishing it on addons.mozilla.org.
+      # Listed channel: publishes the version on addons.mozilla.org.
       # web-ext is invoked via npx (not a dependency) because it pulls in vulnerable deps.
+      # If AMO holds the version for manual review past the timeout, warn and skip the
+      # XPI upload instead of failing; the listing updates once AMO approves it.
       - name: Sign Firefox build
-        run: >-
-          npx --yes web-ext@10.7.0 sign
-          --channel unlisted
-          --source-dir .output/firefox-mv3
-          --upload-source-code .output/*-sources.zip
-          --artifacts-dir .output/signed
-          --approval-timeout 900000
+        run: |
+          set -o pipefail
+          if ! npx --yes web-ext@10.7.0 sign \
+            --channel listed \
+            --source-dir .output/firefox-mv3 \
+            --upload-source-code .output/*-sources.zip \
+            --artifacts-dir .output/signed \
+            --approval-timeout 900000 2>&1 | tee sign.log; then
+            if grep -q 'Approval: timeout exceeded' sign.log; then
+              echo "::warning::AMO approval pending; Firefox XPI not attached to the release"
+            else
+              exit 1
+            fi
+          fi
         env:
           WEB_EXT_API_KEY: ${{ secrets.AMO_JWT_ISSUER }}
           WEB_EXT_API_SECRET: ${{ secrets.AMO_JWT_SECRET }}
@@ -76,6 +85,10 @@ jobs:
       # AMO names the signed file after a hash; rename it to match the Chrome zip.
       - name: Attach Firefox XPI to release
         run: |
+          if ! ls .output/signed/*.xpi >/dev/null 2>&1; then
+            echo "::notice::No signed XPI; skipping"
+            exit 0
+          fi
           zip=$(ls .output/*-firefox.zip)
           xpi="$(basename "${zip%.zip}").xpi"
           mv .output/signed/*.xpi ".output/signed/$xpi"
