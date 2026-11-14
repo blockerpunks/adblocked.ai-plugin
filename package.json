@@ -2,6 +2,7 @@
   "name": "adblocked-ai-extension",
   "description": "Block ads in AI chat interfaces (ChatGPT, more to follow).",
   "private": true,
+  "license": "MIT",
   "version": "0.2.1",
   "type": "module",
   "scripts": {
