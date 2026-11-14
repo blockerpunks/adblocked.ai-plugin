@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.2](https://github.com/blockerpunks/adblocked.ai-plugin/compare/v0.2.1...v0.2.2) (2026-11-14)
+
+
+### Bug Fixes
+
+* **ci:** publish Firefox releases on AMO listed channel ([f79c1c6](https://github.com/blockerpunks/adblocked.ai-plugin/commit/f79c1c646016b67b45efe49e81c36a429e632af0))
+* **ci:** publish Firefox releases on AMO listed channel ([2c8f54f](https://github.com/blockerpunks/adblocked.ai-plugin/commit/2c8f54fcd050fec0988a0a0f85db1e6472e690a8))
+
 ## [0.2.1](https://github.com/blockerpunks/adblocked.ai-plugin/compare/v0.2.0...v0.2.1) (2026-11-11)
 
 
