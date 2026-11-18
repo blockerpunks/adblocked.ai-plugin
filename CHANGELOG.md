@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.0](https://github.com/blockerpunks/adblocked.ai-plugin/compare/v0.2.2...v0.3.0) (2026-11-18)
+
+
+### Features
+
+* add extension icons and store art ([4270678](https://github.com/blockerpunks/adblocked.ai-plugin/commit/4270678da757fde8b0a95186713347d69b19c3e9))
+* add extension icons and store art ([daccd87](https://github.com/blockerpunks/adblocked.ai-plugin/commit/daccd8726c6a0a49537cc1a0f1899a9ff93b85fb))
+
 ## [0.2.2](https://github.com/blockerpunks/adblocked.ai-plugin/compare/v0.2.1...v0.2.2) (2026-11-14)
 
 
