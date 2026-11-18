@@ -22,6 +22,7 @@ Node 22+, npm 10+.
 - `npm run zip` — packaged build
 - Firefox: `npm run dev:firefox` / `build:firefox` / `zip:firefox` (output in `.output/firefox-mv3/`; load via about:debugging → This Firefox → Load Temporary Add-on → `manifest.json`). Release builds are submitted to AMO's listed channel (public on addons.mozilla.org) in `release.yml` via a pinned `npx web-ext` (still not a dependency).
 - `COMMIT_SHA` env var is injected at build time as the `__COMMIT_SHA__` global (defaults to `dev`).
+- Icons: `public/icon/{16,32,48,96,128}.png`, which WXT adds to `manifest.icons` automatically. Store listing art (CWS store icon, promo tile, screenshots) lives in `store-assets/` and is not shipped. All of it is rendered from `store-assets/icon.svg`, the site's `[-]` mark.
 
 There is no test suite.
 
