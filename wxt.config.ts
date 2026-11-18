@@ -7,6 +7,7 @@ export default defineConfig({
   manifest: ({ browser }) => ({
     name: 'adblocked.ai',
     description: 'Block ads in AI chat interfaces.',
+    homepage_url: 'https://adblocked.ai',
     permissions: ['storage'],
     host_permissions: ['*://chatgpt.com/*', '*://*.chatgpt.com/*'],
     ...(browser === 'firefox' && {
