@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.1](https://github.com/blockerpunks/adblocked.ai-plugin/compare/v0.3.0...v0.3.1) (2026-11-18)
+
+
+### Bug Fixes
+
+* add homepage_url to the manifest ([8a07184](https://github.com/blockerpunks/adblocked.ai-plugin/commit/8a071842690cafc5a82aac8e6881f35a7300284a))
+* add homepage_url to the manifest ([0bd4c2f](https://github.com/blockerpunks/adblocked.ai-plugin/commit/0bd4c2fa23c5af3920dff18526eefe65fbdcc6ea))
+
 ## [0.3.0](https://github.com/blockerpunks/adblocked.ai-plugin/compare/v0.2.2...v0.3.0) (2026-11-18)
 
 
