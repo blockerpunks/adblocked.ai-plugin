@@ -45,11 +45,11 @@ We would rather you know the limits than find them.
 
 **What counts as an ad.** We block what the platform itself labels as advertising: paid placements marked "Ad" or "Sponsored" and shown separately from the answer. We don't judge the content of answers, and we don't block a platform's own upgrade prompts.
 
-**Where the rules come from.** We don't learn from your conversations. We run our own test sessions: automated browsers send [N] sample prompts to ChatGPT from [N] countries [daily/weekly] and save the pages that come back. This runs on separate infrastructure operated by one of our contributors. The extension is not part of it and sends it nothing.
+**Where the rules come from.** We don't learn from your conversations. We run our own test sessions: automated browsers send sample prompts to ChatGPT and save the pages that come back. This runs on separate infrastructure operated by one of our contributors. The extension is not part of it and sends it nothing.
 
 When a saved page contains something ChatGPT labels as an ad, we inspect its markup and write a CSS selector for the element that holds only the ad and its disclaimer.
 
-**What this misses.** Our test sessions are [logged out], so ads shown only to signed-in accounts may reach you before they reach us. Coverage also depends on the prompts and countries we sample. If you see an ad we missed, [report it](CONTRIBUTING.md#report-an-ad-we-missed-or-something-we-hid-by-mistake).
+**What this misses.** Our test sessions can't cover every account type, country, or prompt, so some ads may reach you before they reach us. If you see an ad we missed, [report it](CONTRIBUTING.md#report-an-ad-we-missed-or-something-we-hid-by-mistake).
 
 ## Check our work
 
