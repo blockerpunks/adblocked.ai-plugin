@@ -65,7 +65,7 @@ Setup instructions are in the [README](README.md#development).
 
 ## Security
 
-Please don't open public issues for security problems. Email blockerpunks@gmail.com and we'll respond as quickly as we can.
+Please don't open public issues for security problems. Report them privately through [GitHub's vulnerability reporting](https://github.com/blockerpunks/adblocked.ai-plugin/security/advisories/new) and we'll respond as quickly as we can.
 
 ## Conduct
 
