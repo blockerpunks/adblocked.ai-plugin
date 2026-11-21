@@ -3,7 +3,7 @@
 A browser extension that hides ads in AI chat interfaces, starting with ChatGPT. It runs entirely in your browser, collects no data, and is small enough to read in one sitting.
 
 - **Firefox** (140+ desktop, 142+ Android): [Add from addons.mozilla.org](https://addons.mozilla.org/firefox/addon/adblocked-ai/)
-- **Chrome, Brave, Edge**: Web Store listing pending. Until then, download the Chrome zip from [Releases](https://github.com/blockerpunks/adblocked.ai-plugin/releases), unzip it, and load the folder (`chrome://extensions` → Developer mode → Load unpacked).
+- **Chrome, Brave, Edge**: [Add from the Chrome Web Store](https://chromewebstore.google.com/detail/ikolncpmbfbkfmbmkfmcmkddnmnaplhc)
 - **Website**: https://adblocked.ai
 
 ## Why this exists
@@ -20,7 +20,7 @@ Adblocked AI is a rule applier. It does not analyze, classify, or read your conv
 2. **Hiding.** When you open chatgpt.com, the extension adds one stylesheet to the page that sets `display: none` on anything those selectors match.
 3. **Counting.** The extension counts how many elements it has hidden and stores that number in your browser so the popup can show it. The count never leaves your device.
 
-That is the whole product. The popup has an on/off switch and the counter. The settings page shows the exact version and commit your copy was built from.
+That is the whole product. The popup has an on/off switch and the counter. The settings page lets you turn it off for specific sites, reset the counter, and shows the exact version and commit your copy was built from.
 
 ### What it asks for
 
@@ -57,7 +57,7 @@ You shouldn't have to trust a tool that claims to protect you. You can verify th
 
 - **No data leaves your browser.** Open DevTools → Network, filter to the extension, and use ChatGPT. You will see zero requests from it. The source contains no `fetch`, `XMLHttpRequest`, or analytics calls.
 - **The installed build matches the source.** The settings page shows `<version> (<commit SHA>)`. Compare it with the tagged release here.
-- **Builds are reproducible.** Node 22, then `npm ci && npm run zip:firefox` (or `npm run zip`).
+- **Builds are reproducible.** Check out a release tag, run `npm ci` with Node 22, then `COMMIT_SHA=$(git rev-parse HEAD) npm run zip` for Chrome or `COMMIT_SHA=$(git rev-parse HEAD) npm run zip:firefox` for Firefox. Unzipped, your build has the same files as the release. The signed Firefox package also has Mozilla's signature in `META-INF/`, and its `manifest.json` is reformatted during signing but has the same content.
 - **Firefox declares it.** The manifest sets `data_collection_permissions: none`, the declaration Mozilla requires extensions to make about data collection.
 
 ## Who we are
