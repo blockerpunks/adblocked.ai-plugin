@@ -72,7 +72,7 @@ The most useful thing you can do takes five minutes and no code: tell us when yo
 
 We also want help with rules for other AI platforms, a Safari build, tests, and translations. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-Security issues: email blockerpunks@gmail.com instead of opening a public issue.
+Security issues: report them privately through [GitHub's vulnerability reporting](https://github.com/blockerpunks/adblocked.ai-plugin/security/advisories/new) instead of opening a public issue.
 
 ## Development
 
